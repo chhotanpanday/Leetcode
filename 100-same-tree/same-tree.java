@@ -18,9 +18,10 @@ class Solution {
         if(p == null || q == null){
             return p==q;
         }
-     boolean isleftsam = isSameTree(p.left, q.left);
-    boolean isrightsam = isSameTree(p.right, q.right);
+     //boolean isleftsam = isSameTree(p.left, q.left);
+   // boolean isrightsam = isSameTree(p.right, q.right);
       
-      return isleftsam && isrightsam && p.val == q.val;  
+     // return isleftsam && isrightsam && p.val == q.val;  
+     return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 }
