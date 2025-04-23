@@ -16,17 +16,16 @@
 class Solution {
     int maxDiameter = 0;
     public int diameterOfBinaryTree(TreeNode root) {
-        maxPath(root);
-        return maxDiameter;
+       heightD(root);
+       return maxDiameter; 
     }
-    public int maxPath(TreeNode node){
-        if(node == null){
+    public int heightD(TreeNode root){
+        if(root == null){
             return 0;
         }
-        int leftPath = maxPath(node.left);
-        int rightPath = maxPath(node.right);
-
-        maxDiameter = Math.max(leftPath + rightPath, maxDiameter);
-        return Math.max(leftPath,rightPath) + 1;
+        int leftH = heightD(root.left);
+        int rightH = heightD(root.right);
+        maxDiameter = Math.max(maxDiameter, leftH + rightH);
+        return Math.max(leftH,rightH) + 1; // find path at node..
     }
 }
